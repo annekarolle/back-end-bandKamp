@@ -1,6 +1,12 @@
 # M5 - BandKamp Generic View
 
+A partir de um código legado de uma API de musicas com APIVIEWS, Serializer Base e SQLite3
+
 ## Instalação dos pacotes de teste
+
+<details>
+  <summary>Instalação dos pacotes de teste</summary>
+
 
 - Verifique se os pacotes `pytest` e/ou `pytest-testdox` estão instalados globalmente em seu sistema:
 ```shell
@@ -69,3 +75,5 @@ pytest --testdox -vvs tests/albums/
 ```python
 pytest --testdox -vvs tests/songs/
 ```
+
+</details>
