@@ -14,48 +14,48 @@ class UserView(generics.ListCreateAPIView):
     queryset = User.objects.all()
 
 
-class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
+class UserDetailView(generics.ListCreateAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAccountOwner]
 
-    serializer_class = UserSerializer
-    queryset = User.objects.all()
+    # serializer_class = UserSerializer
+    # queryset = User.objects.all()
 
 
-    # def get(self, request: Request, pk: int) -> Response:
-    #     """
-    #     Obtençao de usuário
-    #     """
-    #     user = get_object_or_404(User, pk=pk)
+    def get(self, request: Request, pk: int) -> Response:
+        """
+        Obtençao de usuário
+        """
+        user = get_object_or_404(User, pk=pk)
 
-    #     self.check_object_permissions(request, user)
+        self.check_object_permissions(request, user)
 
-    #     serializer = UserSerializer(user)
+        serializer = UserSerializer(user)
 
-    #     return Response(serializer.data)
+        return Response(serializer.data)
 
-    # def patch(self, request: Request, pk: int) -> Response:
-    #     """
-    #     Atualização de usuário
-    #     """
-    #     user = get_object_or_404(User, pk=pk)
+    def patch(self, request: Request, pk: int) -> Response:
+        """
+        Atualização de usuário
+        """
+        user = get_object_or_404(User, pk=pk)
 
-    #     self.check_object_permissions(request, user)
+        self.check_object_permissions(request, user)
 
-    #     serializer = UserSerializer(user, data=request.data, partial=True)
-    #     serializer.is_valid(raise_exception=True)
-    #     serializer.save()
+        serializer = UserSerializer(user, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
 
-    #     return Response(serializer.data)
+        return Response(serializer.data)
 
-    # def delete(self, request: Request, pk: int) -> Response:
-    #     """
-    #     Deleçao de usuário
-    #     """
-    #     user = get_object_or_404(User, pk=pk)
+    def delete(self, request: Request, pk: int) -> Response:
+        """
+        Deleçao de usuário
+        """
+        user = get_object_or_404(User, pk=pk)
 
-    #     self.check_object_permissions(request, user)
+        self.check_object_permissions(request, user)
 
-    #     user.delete()
+        user.delete()
 
-    #     return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_204_NO_CONTENT)
