@@ -1,11 +1,18 @@
 # M5 - BandKamp Generic View
 
-A partir de um código legado de uma API de musicas com APIVIEWS, Serializer Base e SQLite3
+A partir de um código legado de uma API de musicas com APIVIEWS, Serializer Base e SQLite3, foi feito a transição para Generic Views, Model Serializer e Postgres.
+Link do deploy da aplicação feito no RailWay: <a href="https://m5-bandkamp-annekarolle-production.up.railway.app/ ">https://m5-bandkamp-annekarolle-production.up.railway.app/ </a>
+
+
+
+## Diagrama de Classe
+![Screenshot](Diagrama.BANDKAMP.png)
+
 
 ## Instalação dos pacotes de teste
 
 <details>
-  <summary>Instalação dos pacotes de teste</summary>
+  <summary></summary>
 
 
 - Verifique se os pacotes `pytest` e/ou `pytest-testdox` estão instalados globalmente em seu sistema:
@@ -77,3 +84,11 @@ pytest --testdox -vvs tests/songs/
 ```
 
 </details>
+
+## Tecnologias
+
+<div>
+<img align="center" alt="css" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<img align="center" alt="css" src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white">
+  
+</div>
